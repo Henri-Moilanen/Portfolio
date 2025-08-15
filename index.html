@@ -5,41 +5,207 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Henri Moilanen - Portfolio</title>
     <style>
+        body {
+            margin: 0;
+            background-color: #1E1E1E;
+            color: #F4F4F4;
+            transition-duration: 0.5s;
+        }
+
+        /*Light mode*/
+        .light-mode {
+            background-color: #f8f9fa;
+            color: #1E1E1E;
+        }
+        .light-mode > .container > div {
+            background-color: #dee2e6;
+        }
+        .light-mode > .container > div > h1, .light-mode > .bar-div {
+            background-color: #ced4da;
+            color: #349cdd;
+        }
+        .light-mode > .bar-div > button {
+            background-color: #F4F4F4;
+            color: #343a40;
+        }
+        .light-mode > .bar-div > a {
+            background-color: #F4F4F4;
+        }
+
         /*Headings*/
         h1 {
+            font-family: Verdana;
+            text-align: left;
+            color: #42a5f5;
+            background-color: #282c30;
+            width: fit-content;
+            border-bottom-right-radius: 12px;
+            border-top-left-radius: 12px;
+            margin-top: 0px;
+            padding: 10px;
+            transition-duration: 0.5s;
+        }
+        h3 {
+            font-family: Verdana;
+        }
+
+        p, li {
             font-family: Helvetica;
         }
 
-        /*Paragraphs*/
-        p {
-            font-family: system-ui;
+        /*Lists*/
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        /*Divs*/
+        .bar-div {
+            padding: 10px;
+            height: 40px;
+            background-color: #282c30;
+            transition-duration: 0.5s;
+        }
+        .container {
+            text-align: center;
+            display: grid;
+            grid-template-areas: "header header" "software software" "projects projects";
+            row-gap: 25px;
+        }
+        .container > div {
+            background-color: #343a40;
+            border-radius: 12px;       
+            padding-top: 0;
+            transition-duration: 0.5s;
+        }
+        .container > div.header {
+            grid-area: header;
+            text-align: left;
+        }
+        .container > div.software {
+            grid-area: software;
+        }
+        .container > div.projects {
+            grid-area: projects;
+        }
+        div.software-block {
+            display: flex;
+            justify-content: space-evenly;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
         /*Hyperlinks*/
         a {
+            font-family: system-ui;
             color: #4EA8DE;
-            padding: 5px;
+            background-color: #212529;
+            border-radius: 12px;
+            padding: 7.5px;
+            transition-duration: 0.25s;
         }
         a:hover {
             color: #82CFFD;
+            background-color: #282c30;
         }
+
+        /*Buttons*/
+        button {
+            cursor: pointer;
+            background-color: #343a40;
+            color: #F4F4F4;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            padding: 10px;
+            transition-duration: 0.25s;
+        }
+        button:hover, .light-mode > .bar-div > button:hover {
+            background-color: #82CFFD;
+            padding: 11px;
+        }
+        button:active, .light-mode > .bar-div > button:active {
+            transition-duration: 0.05s;
+            padding: 9px;
+        }
+
     </style>
+    <script>
+        function SwitchColors() {
+            //Toggle light- / dark mode
+            document.body.classList.toggle("light-mode");
+
+            var button = document.getElementById("ColorButton");
+            //Switch button text
+            switch(button.textContent) {
+                case "Dark mode":
+                    button.textContent = "Light mode";
+                    break;
+                case "Light mode":
+                    button.textContent = "Dark mode";
+                    break;
+            };
+        };
+    </script>
 </head>
-<body style="background-color: #1E1E1E; color: #EAEAEA; text-align: center;">
-    <h2 style="color: darkorange; font-family: Verdana;">THIS WEBPAGE IS WORK IN PROGRESS</h2>
+<body>
 
-    <h1>About me</h1>
-    <p style="max-width: 75%; margin: auto;">Hi, my name is Henri Moilanen and i'm 
-        a finnish software engineering student specializing in game development. I have some experience 
-        making games with various engines like Unity. My other hobbies include playing video games and 
-        listening to music.<br><br>I'm currently looking for internship opportunities and learning more 
-        about game development.</p>
+    <div class="bar-div">
+        <button id="ColorButton" onclick="SwitchColors()">Light mode</button>
+    </div>
 
-    <h1>Projects</h1>
-    <p style="color: gray;">No public projects yet :/</p>
+    <h2 style="color: darkorange; font-family: Verdana; text-align: center;">THIS WEBPAGE IS WORK IN PROGRESS</h2>
 
-    <h1>Contacts</h1>
-    <a style="font-family: system-ui;" href="mailto:henmo2008@gmail.com">Email</a>
-    <a style="font-family: system-ui;" href="https://github.com/Henri-Moilanen" target="_blank">Github</a>
+    <div class="container">
+        <div class="header">
+            <h1>About me</h1>
+            <p style="width: 95%; margin-left: 2.5%;">Hi, my name is Henri Moilanen and i'm 
+                a finnish software engineering student specializing in game development. I have some experience 
+                making games with various engines like Unity. My other hobbies include playing video games and 
+                listening to music.<br><br>I'm currently looking for internship opportunities and learning more 
+                about game development.</p>
+        </div>
+
+        <div class="software">
+            <h1>Software & Tools</h1>
+            <div class="software-block">
+                <div>
+                    <h3>Game engines</h3>
+                    <ul>
+                        <li>Unity 6</li>
+                        <li>Godot 4.3</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Programming languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>C#</li>
+                        <li>HTML & CSS</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Art & modelling</h3>
+                    <ul>
+                        <li>Adobe Photoshop</li>
+                        <li>Adobe Illustrator</li>
+                        <li>Blender 4.3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="projects">
+            <h1>Projects</h1>
+            <p style="color: gray;">No public projects yet :/</p>
+        </div>
+
+    </div>
+    <div class="bar-div" style="text-align: center; padding: 25px; margin-bottom: -15px; margin-top: 25px;">
+            <a href="mailto:henmo2008@gmail.com">Email</a>
+            <a href="https://github.com/Henri-Moilanen" target="_blank">Github</a>
+    </div>
 </body>
 </html>
