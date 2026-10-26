@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Henri Moilanen</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js"></script>
+    <noscript><h2 style="color: darkorange; text-align: center;">Browser does not support JavaScript!</h2></noscript>
+</head>
+<body>
+    <h2 style="color: darkorange;">WEB PAGE IS WORK IN PROGRESS</h2>
+
+    <h1 style="margin-bottom: 0;">Henri Moilanen</h1>
+    <h3 style="margin-top: 0;">Game developer</h3>
+
+    <p>Finnish game developer from Oulu, Finland.</p>
+
+    <wbr>
+
+    <div class="section">
+        <div class="grid-1">
+            <div class="subgrid">
+                <h3 style="text-align: center; margin: 6px;">GAME ENGINES</h3>
+                <div class="grid-2">
+                    <p>Unity</p>
+                    <p>Godot</p>
+                    <p>Unreal</p>
+                </div>
+            </div>
+            <div class="subgrid">
+                <h3 style="text-align: center; margin: 6px;">LANGUAGES</h3>
+                <div class="grid-2">
+                    <p>C#</p>
+                    <p>UE Blueprint</p>
+                    <p>Python</p>
+                    <p>GDScript</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <wbr>
+
+    <div class="section">
+        <div class="showcase-grid">
+            <h3>Custom Debug Terminal</h3>
+            <h4>Unity 6</h4>
+            <p>
+                Custom debug terminal I made in 1 month. 
+                Contains a console and a profiler.<br><br> 
+                Custom commands can be easily added to fields and methods with a custom attribute.
+            </p>
+            <div class="slideshow-container">
+                <img id="image1" src="../images/showcase_01/console_showcase.gif">
+                <a class="prev" onclick="ChangeSlide(-1)" hidden>&#10094;</a>
+                <a class="next" onclick="ChangeSlide(1)" hidden>&#10095;</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="showcase-grid">
+            <h3>2D Terrain generation</h3>
+            <h4>Godot 4.7</h4>
+            <p>
+                Basic 2d terrain generation made in a few days with Godot.<br><br>
+                Uses TileMapLayer and FastNoise to generate tiles.
+            </p>
+            <div class="slideshow-container">
+                <img id="image1" src="../images/showcase_02/godot_showcase.gif">
+                <a class="prev" onclick="ChangeSlide(-1)" hidden>&#10094;</a>
+                <a class="next" onclick="ChangeSlide(1)" hidden>&#10095;</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

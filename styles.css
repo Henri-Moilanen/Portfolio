@@ -1,0 +1,139 @@
+:root {
+    --primary-color: #253237;
+    --secondary-color: #425760;
+    --primary-border-color: #29363b;
+    --primary-header-color: #e0fbfc;
+    --primary-paragraph-color: #d4e7e8;
+}
+
+body {
+    background-color: #131316;
+    background-image:  linear-gradient(#161617 2px, transparent 2px), linear-gradient(90deg, #161617 2px, transparent 2px), linear-gradient(#161617 1px, transparent 1px), linear-gradient(90deg, #161617 1px, #131316 1px);
+    background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+    font-family: monospace;
+    font-size: 18px;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-header-color);
+}
+
+p, small, sub, a {
+    color: var(--primary-paragraph-color);
+}
+
+.section {
+    background-color: var(--primary-color);
+    margin-top: 32px;
+}
+
+.grid-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-2 {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-2 > p {
+    margin: 0;
+}
+
+.subgrid {
+    border-right: var(--primary-border-color) 1px solid;
+    border-left: var(--primary-border-color) 1px solid;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto 8fr auto;
+}
+
+.showcase-grid > * {
+    grid-column: 1;
+    margin: 0;
+}
+
+.showcase-grid > p {
+    padding: 6px;
+    font-size: 1rem;
+}
+
+.showcase-grid > .slideshow-container {
+    position: relative;
+    grid-column: 2;
+    grid-row: 1 / span 4;
+}
+
+.showcase-grid > h3, h4 {
+    background-color: var(--secondary-color);
+    padding-left: 3px;
+}
+
+small {
+    padding: 6px;
+    font-size: 0.75rem;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.prev, .next {
+    cursor: pointer;
+    font-size: 2rem;
+    background-color: #13131680;
+    position: absolute;
+    top: 50%;
+    width: 32px;
+    height: 48px;
+    text-align: center;
+    transition-duration: 0.2s;
+    user-select: none;
+}
+
+.prev:hover, .next:hover {
+    background-color: #28282e80;
+    transition-duration: 0.2s;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .grid-1 {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .showcase-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 3fr 8fr auto;
+    }
+
+    .showcase-grid > .slideshow-container {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .prev, .next {
+        font-size: 18px;
+    }
+}
