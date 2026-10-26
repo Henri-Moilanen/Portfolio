@@ -24,9 +24,17 @@ p, small, sub, a {
     color: var(--primary-paragraph-color);
 }
 
+#note-wip {
+    color: darkorange;
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.25);
+    border-left: red 2px double;
+    border-right: red 2px double;
+}
+
 .section {
     background-color: var(--primary-color);
-    margin-top: 32px;
+    margin-bottom: 6px;
 }
 
 .grid-1 {
@@ -47,14 +55,13 @@ p, small, sub, a {
 .subgrid {
     border-right: var(--primary-border-color) 1px solid;
     border-left: var(--primary-border-color) 1px solid;
-    margin-top: 4px;
     margin-bottom: 4px;
 }
 
 .showcase-grid {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto auto 8fr auto;
+    grid-template-rows: auto 1fr auto;
 }
 
 .showcase-grid > * {
@@ -70,48 +77,23 @@ p, small, sub, a {
 .showcase-grid > .slideshow-container {
     position: relative;
     grid-column: 2;
-    grid-row: 1 / span 4;
+    grid-row: 1 / span 3;
 }
 
-.showcase-grid > h3, h4 {
+.showcase-grid > .showcase-header {
+    border-left: 2px solid cyan;
     background-color: var(--secondary-color);
-    padding-left: 3px;
 }
 
-small {
-    padding: 6px;
-    font-size: 0.75rem;
+.showcase-grid > .showcase-header > * {
+    padding-left: 4px;
+    padding-right: 4px;
+    margin: 0;
 }
 
 img {
     width: 100%;
     height: 100%;
-}
-
-.prev, .next {
-    cursor: pointer;
-    font-size: 2rem;
-    background-color: #13131680;
-    position: absolute;
-    top: 50%;
-    width: 32px;
-    height: 48px;
-    text-align: center;
-    transition-duration: 0.2s;
-    user-select: none;
-}
-
-.prev:hover, .next:hover {
-    background-color: #28282e80;
-    transition-duration: 0.2s;
-}
-
-.prev {
-    left: 0;
-}
-
-.next {
-    right: 0;
 }
 
 @media screen and (max-width: 600px) {
@@ -125,15 +107,10 @@ img {
 
     .showcase-grid {
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto 3fr 8fr auto;
     }
 
     .showcase-grid > .slideshow-container {
         grid-column: 1;
         grid-row: 3;
-    }
-
-    .prev, .next {
-        font-size: 18px;
     }
 }
